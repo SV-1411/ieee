@@ -20,8 +20,8 @@ interface Member {
 const Members: React.FC = () => {
   const members: Member[] = [
     {
-      name: 'Dr. Sarah Chen',
-      position: 'Chapter President',
+      name: 'Bharat Jambhulkar',
+      position: 'IEEE CS CHAIR',
       image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80',
       bio: 'Leading AI researcher with 15+ years of experience in machine learning and neural networks.',
       achievements: [
@@ -38,8 +38,8 @@ const Members: React.FC = () => {
       }
     },
     {
-      name: 'Marcus Rodriguez',
-      position: 'Technical Director',
+      name: 'Vaibhavi Mangrulkar',
+      position: 'IEEE CS VICE-CHAIR',
       image: 'https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?auto=format&fit=crop&q=80',
       bio: 'Full-stack developer specializing in cloud architecture and distributed systems.',
       achievements: [
@@ -55,25 +55,42 @@ const Members: React.FC = () => {
       }
     },
     {
-      name: 'Dr. Emily Wong',
-      position: 'Research Lead',
-      image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80',
-      bio: 'Quantum computing researcher focused on quantum error correction and algorithm design.',
+      name: 'Rutuj Langde',
+      position: 'SECRETARY',
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80',
+      bio: 'Expert in community building and technical event management with global experience.',
       achievements: [
-        'Quantum Computing Excellence Award',
-        'Published in Nature Quantum',
-        'Patent holder for quantum error correction'
+        'Organized 100+ tech conferences',
+        'Community Leadership Award',
+        'IEEE Distinguished Speaker'
       ],
-      experience: '10 years in Quantum Computing',
-      joinDate: 'Member since 2014',
+      experience: '8 years in Event Management',
+      joinDate: 'Member since 2016',
       social: {
         linkedin: 'https://linkedin.com',
-        email: 'mailto:emily@ieee.org'
+        email: 'mailto:james@ieee.org'
       }
     },
     {
-      name: 'James Anderson',
-      position: 'Events Coordinator',
+      name: 'Shivansh Verma',
+      position: 'WEBMASTER',
+      image: '/assets/Shivansh Verma..jpg',
+      bio: 'wannabe software developer',
+      achievements: [
+        'exist',
+        'um',
+        'Patent holder for methane treatment paper'
+      ],
+      experience: '1 year',
+      joinDate: 'September 2024',
+      social: {
+        linkedin: 'www.linkedin.com/in/shivansh-verma-751850298',
+        email: 'shivansh1411@gmail.com'
+      }
+    },
+    {
+      name: 'SHREYASH BAHE',
+      position: 'CO-WEBMASTER',
       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80',
       bio: 'Expert in community building and technical event management with global experience.',
       achievements: [
