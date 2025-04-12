@@ -137,9 +137,10 @@ className="absolute inset-0 bg-black/40"
   </div>
 
 
-      <div className="relative z-10 min-h-[calc(100vh-4rem)] flex">
+  <div className="relative z-10 min-h-[calc(100vh-4rem)] flex flex-col md:flex-row">
+
         {/* Fixed Left Section - 60% width */}
-        <div className="w-[60%] p-12 flex items-center justify-center">
+        <div className="w-full md:w-[60%] p-12 flex items-center justify-center">
           <AnimatePresence mode="wait">
             {selectedEvent ? (
               <motion.div
@@ -244,7 +245,7 @@ className="absolute inset-0 bg-black/40"
         </div>
 
         {/* Scrollable Right Section - 40% width */}
-        <div className="w-[40%] border-l border-[#f2f3f4]/10 flex flex-col h-[calc(100vh-4rem)] bg-[#191919]/80 backdrop-blur-lg">
+        <div className="w-full md:w-[40%] border-l border-[#f2f3f4]/10 flex flex-col h-[calc(100vh-4rem)] bg-[#191919]/80 backdrop-blur-lg">
           {/* Filter Controls */}
           <div className="p-6 border-b border-[#f2f3f4]/10">
             <h2 className="text-2xl font-dainty font-bold text-[#f2f3f4] mb-4">Events</h2>

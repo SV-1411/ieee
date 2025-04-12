@@ -121,7 +121,7 @@ const About: React.FC = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="flex items-center gap-8 glass-card p-6 rounded-lg"
+                className="flex flex-col md:flex-row items-center gap-4 md:gap-8 glass-card p-6 rounded-lg"
               >
                 <div className={`flex-1 ${index % 2 === 0 ? 'text-right order-1' : 'order-3'}`}>
                   <h3 className="text-2xl font-bold text-[#ffd300]">{item.year}</h3>
