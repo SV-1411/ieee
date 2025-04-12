@@ -185,7 +185,8 @@ const Home: React.FC = () => {
                   transition={{ duration: 1, delay: 1.5 }}
                   className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto mb-8"
                 >
-                  The force of code is strong with us.
+                 A space where curiosity becomes code, and ideas become impact.
+                 IEEE CS — shaping minds, one keystroke at a time.
                 </motion.p>
 
                 <motion.button
@@ -202,7 +203,30 @@ const Home: React.FC = () => {
             </section>
 
             {/* Stats Section */}
-            <section className="page-section">
+            
+
+            {/* Quick Intro Section */}
+            <section className="relative py-20 flex justify-center items-center bg-transparent">
+  <div className="relative z-10 w-[95%] max-w-5xl px-10 py-16 bg-black/50 rounded-3xl border border-white/20 backdrop-blur-md shadow-2xl">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: true }}
+      className="text-center"
+    >
+      <h2 className="text-4xl md:text-5xl font-bold mb-8 text-yellow-400 drop-shadow">
+        Advancing Technology for Humanity
+      </h2>
+      <p className="text-xl md:text-1xl text-white/80 leading-relaxed">
+        The IEEE Computer Society is the premier source for information, inspiration, and collaboration in computer science and engineering.
+        Connecting members worldwide, we drive technology innovation and excellence for the benefit of humanity.
+      </p>
+    </motion.div>
+  </div>
+</section>
+
+<section className="page-section">
               <div className="page-container">
                 <motion.h2
                   initial={{ opacity: 0 }}
@@ -236,28 +260,6 @@ const Home: React.FC = () => {
                 </div>
               </div>
             </section>
-
-            {/* Quick Intro Section */}
-            <section className="relative py-20 flex justify-center items-center bg-transparent">
-  <div className="relative z-10 w-[95%] max-w-5xl px-10 py-16 bg-black/50 rounded-3xl border border-white/20 backdrop-blur-md shadow-2xl">
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
-      viewport={{ once: true }}
-      className="text-center"
-    >
-      <h2 className="text-4xl md:text-5xl font-bold mb-8 text-yellow-400 drop-shadow">
-        Advancing Technology for Humanity
-      </h2>
-      <p className="text-xl md:text-2xl text-white/80 leading-relaxed">
-        The IEEE Computer Society is the premier source for information, inspiration, and collaboration in computer science and engineering.
-        Connecting members worldwide, we drive technology innovation and excellence for the benefit of humanity.
-      </p>
-    </motion.div>
-  </div>
-</section>
-
 
 
             {/* Footer */}

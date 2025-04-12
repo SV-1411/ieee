@@ -7,28 +7,28 @@ const About: React.FC = () => {
     {
       year: '1946',
       title: 'The Beginning',
-      description: 'Formation of the IEEE Computer Society, originally as the Subcommittee on Large-Scale Computing.',
+      description: 'The IEEE Computer Society is born — laying the foundation for a global network of computing professionals and visionaries.',
       icon: History,
       image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=200'
     },
     {
-      year: '1970',
-      title: 'Official Recognition',
-      description: 'Became a full IEEE society, marking a milestone in computing history.',
+      year: '2011',
+      title: 'GHRCE Joins the Mission',
+      description: 'GHRCE establishes its IEEE CS Student Chapter, becoming a beacon of tech-driven learning, leadership, and innovation.',
       icon: Award,
       image: 'https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&q=80&w=200'
     },
     {
-      year: '1984',
-      title: 'Global Expansion',
-      description: 'Established international presence with chapters worldwide.',
+      year: '2017',
+      title: 'The Rising Impact',
+      description: 'From workshops to hackathons, the chapter begins to make waves — empowering students and elevating the campus tech culture.',
       icon: Users,
       image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=200'
     },
     {
-      year: '2024',
+      year: '2025',
       title: 'Future Forward',
-      description: 'Leading the evolution of computing technology and education.',
+      description: 'Rooted in legacy, driven by vision — the chapter steps into the future with fresh ideas, stronger collaborations, and a passion to lead.',
       icon: Target,
       image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=200'
     },
@@ -36,25 +36,47 @@ const About: React.FC = () => {
 
   const projectImages = [
     {
-      url: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80',
+      url: '/assets/war1.jpg',
       title: 'Tech Innovation'
     },
     {
-      url: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80',
+      url: '/assets/war2.jpg',
       title: 'Digital Future'
     },
     {
-      url: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80',
-      title: 'Cyber Security'
+      url: '/assets/war3.jpg',
+      title: 'Tech Innovation'
+    }, 
+    {
+      url: '/assets/war4.jpg',
+      title: 'Tech Innovation'
     },
     {
-      url: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80',
-      title: 'AI Research'
+      url: '/assets/war5.jpg',
+      title: 'Tech Innovation'
     },
     {
-      url: 'https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&q=80',
-      title: 'Quantum Computing'
-    }
+      url: '/assets/starwar.jpg',
+      title: 'Tech Innovation'
+    }, 
+    {
+      url: '/assets/1.jpg',
+      title: 'Tech Innovation'
+    },
+    {
+      url: '/assets/2.jpg',
+      title: 'Tech Innovation'
+    },
+    {
+      url: '/assets/3.jpg',
+      title: 'Tech Innovation'
+    },
+    {
+      url: '/assets/war2.jpg',
+      title: 'Digital Future'
+    },
+    
+    
   ];
 
   const [currentImages, setCurrentImages] = useState(projectImages);
@@ -64,7 +86,9 @@ const About: React.FC = () => {
       setCurrentImages(prevImages => {
         const newImages = [...prevImages];
         const randomIndex = Math.floor(Math.random() * newImages.length);
-        const availableImages = projectImages.filter(img => !newImages.includes(img));
+        const currentUrls = newImages.map(img => img.url);
+const availableImages = projectImages.filter(img => !currentUrls.includes(img.url));
+
         if (availableImages.length > 0) {
           const randomNewImage = availableImages[Math.floor(Math.random() * availableImages.length)];
           newImages[randomIndex] = randomNewImage;
@@ -86,13 +110,10 @@ const About: React.FC = () => {
       <div
         className="w-full h-full bg-cover bg-center"
         style={{
-          backgroundImage: "url('/assets/war1.jpg')",
+          backgroundImage: "url('/assets/3.jpg')",
         }}
       />
-      <div
-  className="absolute inset-0 bg-black/40"
- 
-/>
+      
     </div>
 
       {/* Hero Section */}
@@ -101,9 +122,9 @@ const About: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-7xl mx-auto text-center"
+          className="max-w-7xl mx-auto text-center animate-glow"
         >
-          <h1 className="page-title">Our Journey Through Time</h1>
+          <h1 className="page-title animate-glow">Our Journey Through Time</h1>
           <p className="text-xl text-[#f2f3f4]/80 max-w-3xl mx-auto font-creative">
             From the dawn of computing to the frontiers of technology, we've been shaping the future of computer science.
           </p>
@@ -146,30 +167,32 @@ const About: React.FC = () => {
 
       {/* Projects Gallery Section */}
       <section className="py-20 px-4 relative z-10">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 animate-glow font-dainty">Our Projects</h2>
-          <div className="grid grid-cols-5 gap-4">
-            {currentImages.map((item, index) => (
-              <motion.div
-                key={`${item.title}-${index}`}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
-                className="relative aspect-square glass-card rounded-lg overflow-hidden group"
-              >
-                <img
-                  src={item.url}
-                  alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#191919] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <h3 className="text-[#f2f3f4] font-dainty font-semibold text-sm">{item.title}</h3>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-5xl font-bold text-center mb-12 animate-glow font-dainty">
+          Our Moments
+        </h2>
+        <div className="grid grid-cols-5 gap-4">
+          {currentImages.map((item, index) => (
+            <motion.div
+              key={`${item.title}-${index}`}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="relative aspect-square glass-card rounded-lg overflow-hidden group"
+            >
+              <img
+                src={item.url}
+                alt={item.title}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#191919] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                <h3 className="text-[#f2f3f4] font-dainty font-semibold text-sm">{item.title}</h3>
+              </div>
+            </motion.div>
+          ))}
         </div>
-      </section>
+      </div>
+    </section>
     </div>
   );
 };
