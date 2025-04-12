@@ -26,12 +26,10 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
 
   const { number } = useSpring({
     from: { number: 0 },
-    number: inView ? end : 0,
-    delay: 200,
+    number: end,
     config: { duration },
-    onStart: () => setIsAnimating(true),
-    onRest: () => setIsAnimating(false),
   });
+  
 
   const formattedNumber = (n: number) => {
     if (n >= 1000) {
