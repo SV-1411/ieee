@@ -97,17 +97,14 @@ const Members: React.FC = () => {
       <div
         className="w-full h-full bg-cover bg-center"
         style={{
-          backgroundImage: "url('/assets/war5.jpg')"
+          backgroundImage: "url('/assets/2.jpg')"
           ,
         }}
       />
-      <div
-  className="absolute inset-0 bg-black/40"
- 
-/>
+      <div className="absolute inset-0 bg-black/40"/>
     </div>
   {/* Dark Overlay */}
-<div className="absolute inset-0 bg-black/55 z-10" />
+
 
       <section className="py-20 px-4 relative z-10">
         <div className="max-w-7xl mx-auto">

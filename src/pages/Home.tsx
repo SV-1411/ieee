@@ -209,7 +209,7 @@ const Home: React.FC = () => {
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.8 }}
                   viewport={{ once: true }}
-                  className="text-3xl md:text-4xl font-bold text-center mb-16 animate-glow"
+                  className="text-4xl md:text-5xl font-bold text-center mb-16 animate-glow"
                 >
                   Our Impact in Numbers
                 </motion.h2>
