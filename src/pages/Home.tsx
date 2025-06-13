@@ -6,22 +6,7 @@ import { Users, Calendar, Award, Github, Twitter, Linkedin, Mail,  Star,
   Zap,
   Cpu,
   Wifi,
-  Activity,
-  Atom,
-  Cloud,
-  Eye,
-  Shield,
-  Rocket,
-  Code2,
-  GitBranch,
-  Server,
-  MousePointerClick,
-  Radar,
-  SatelliteDish,
-  Bug,
-  Sparkles,
-  CircleDot,
-  Database, } from 'lucide-react';
+  Rocket } from 'lucide-react';
 
 const Home: React.FC = () => {
   const [showIntro, setShowIntro] = useState(true);
@@ -91,12 +76,7 @@ const Home: React.FC = () => {
   ];
 
   return (
-    
     <div className="min-h-screen relative">
-
-      {/* Dark Overlay */}
-<div className="absolute inset-0 bg-black/60 z-10" />
-
       <AnimatePresence>
         {showIntro && (
           <motion.div
@@ -123,8 +103,7 @@ const Home: React.FC = () => {
 
       <AnimatePresence>
         {showContent && (
-          <div className="relative z-10">
-            {/* Floating Doodles */}
+          <div className="relative z-10 pt-16">
             {doodles.map((Doodle, index) => (
               <motion.div
                 key={index}
@@ -140,14 +119,8 @@ const Home: React.FC = () => {
               </motion.div>
             ))}
 
-            {/* Hero Section */}
-            <section className="min-h-screen flex items-center justify-center relative">
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 0.5 }}
-                className="text-center z-10 px-4"
-              >
+            <section className="relative z-10 flex flex-col items-center justify-center min-h-screen text-white text-center px-4">
+              <div className="glass-card p-8 md:p-12 rounded-3xl">
                 <motion.div
                   animate={{
                     scale: [1, 1.03, 1],
@@ -156,7 +129,6 @@ const Home: React.FC = () => {
                     duration: 3,
                     repeat: Infinity,
                     ease: "easeInOut",
-                    
                   }}
                   className="sm:h-32 mx-auto mb-8"
                 >
@@ -185,8 +157,8 @@ const Home: React.FC = () => {
                   transition={{ duration: 1, delay: 1.5 }}
                   className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto mb-8"
                 >
-                 A space where curiosity becomes code, and ideas become impact.
-                 IEEE CS — shaping minds, one keystroke at a time.
+                  A space where curiosity becomes code, and ideas become impact.
+                  IEEE CS — shaping minds, one keystroke at a time.
                 </motion.p>
 
                 <motion.button
@@ -199,133 +171,141 @@ const Home: React.FC = () => {
                 >
                   Join Us <Rocket className="inline-block ml-2" size={20} />
                 </motion.button>
-              </motion.div>
+              </div>
             </section>
 
-            {/* Stats Section */}
-            
-
-            {/* Quick Intro Section */}
-            <section className="relative py-20 flex justify-center items-center bg-transparent">
-  <div className="relative z-10 w-[95%] max-w-5xl px-10 py-16 bg-black/50 rounded-3xl border border-white/20 backdrop-blur-md shadow-2xl">
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
-      viewport={{ once: true }}
-      className="text-center"
-    >
-      <h2 className="text-4xl md:text-5xl font-bold mb-8 text-yellow-400 drop-shadow">
-        Advancing Technology for Humanity
-      </h2>
-      <p className="text-xl md:text-1xl text-white/80 leading-relaxed">
-        The IEEE Computer Society is the premier source for information, inspiration, and collaboration in computer science and engineering.
-        Connecting members worldwide, we drive technology innovation and excellence for the benefit of humanity.
-      </p>
-    </motion.div>
-  </div>
-</section>
-
-<section className="page-section">
-              <div className="page-container">
-                <motion.h2
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ duration: 0.8 }}
-                  viewport={{ once: true }}
-                  className="text-4xl md:text-5xl font-bold text-center mb-16 animate-glow"
-                >
-                  Our Impact in Numbers
-                </motion.h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                  {stats.map((stat, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      className={`relative overflow-hidden rounded-2xl bg-gradient-to-br ${stat.color} p-8 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300`}
-                    >
-                      <div className="absolute top-0 right-0 w-20 h-20 -mr-10 -mt-10 rounded-full bg-white/10 blur-2xl" />
-                      <div className="relative">
-                        <div className="mb-4">
-                          <stat.icon className={`w-10 h-10 ${stat.iconColor}`} />
+            <section className="py-20 px-4">
+              <div className="max-w-6xl mx-auto">
+                <div className="glass-card p-8 md:p-12 rounded-3xl">
+                  <motion.h2
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                    className="text-4xl md:text-5xl font-bold text-center mb-16 animate-glow"
+                  >
+                    By the Numbers
+                  </motion.h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {stats.map((stat, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: index * 0.2 }}
+                        viewport={{ once: true }}
+                        className={`p-6 rounded-2xl bg-gradient-to-br ${stat.color} text-white shadow-lg flex flex-col items-center text-center`}
+                      >
+                        <div className={`text-4xl mb-4 p-3 rounded-full bg-white/10 ${stat.iconColor}`}>
+                          <stat.icon size={30} />
                         </div>
-                        <AnimatedCounter end={stat.end} label={stat.label} color={stat.iconColor} />
-                        <p className="text-sm text-white/80 mt-2">{stat.description}</p>
-                      </div>
-                    </motion.div>
-                  ))}
+                        <h3 className="text-4xl font-bold">
+                          <AnimatedCounter end={stat.end} label="" />+
+                        </h3>
+                        <p className="text-lg font-semibold mt-2">{stat.label}</p>
+                        <p className="text-sm text-white/80 mt-1">{stat.description}</p>
+                      </motion.div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </section>
 
+            <section className="py-20 px-4">
+              <div className="max-w-5xl mx-auto">
+                <div className="glass-card p-8 md:p-12 rounded-3xl">
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1 }}
+                    viewport={{ once: true }}
+                    className="text-center"
+                  >
+                    <h2 className="text-4xl md:text-5xl font-bold mb-8 text-yellow-400 drop-shadow">
+                      Advancing Technology for Humanity
+                    </h2>
+                    <p className="text-xl md:text-1xl text-white/80 leading-relaxed">
+                      The IEEE Computer Society is the premier source for information, inspiration, and collaboration in computer science and engineering.
+                      Connecting members worldwide, we drive technology innovation and excellence for the benefit of humanity.
+                    </p>
+                  </motion.div>
+                </div>
+              </div>
+            </section>
 
-            {/* Footer */}
-            <footer className="bg-black text-white border-t border-white/10 backdrop-blur-sm">
-  <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-12 gap-10">
-    {/* Logo + About */}
-    <div className="md:col-span-4 space-y-4">
-      <div className="flex items-center gap-3">
-        <img
-          src="/assets/ieee1.png"
-          alt="IEEE CS Logo"
-          className="w-10 h-10 object-contain"
-        />
-        <h2 className="text-xl font-bold text-yellow-400">IEEE Computer Society</h2>
-      </div>
-      <p className="text-sm text-gray-400">
-        Empowering technologists for the digital future through innovation, collaboration, and excellence.
-      </p>
-      <div className="flex space-x-4 pt-2">
-        <a href="#" className="hover:text-yellow-400 transition-transform hover:scale-110"><Github size={20} /></a>
-        <a href="#" className="hover:text-yellow-400 transition-transform hover:scale-110"><Twitter size={20} /></a>
-        <a href="#" className="hover:text-yellow-400 transition-transform hover:scale-110"><Linkedin size={20} /></a>
-        <a href="#" className="hover:text-yellow-400 transition-transform hover:scale-110"><Mail size={20} /></a>
-      </div>
-    </div>
+            <section className="py-20 px-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="glass-card p-8 md:p-12 rounded-3xl">
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1 }}
+                    viewport={{ once: true }}
+                    className="text-center"
+                  >
+                    <h2 className="text-4xl md:text-5xl font-bold text-center mb-8 animate-glow">
+                      Why Join Us
+                    </h2>
+                    <p className="text-xl md:text-1xl text-white/80 leading-relaxed">
+                      Joining the IEEE Computer Society means being part of a global community of technology leaders and innovators.
+                      As a member, you'll have access to exclusive benefits, including networking opportunities, career development resources, and more.
+                    </p>
+                  </motion.div>
+                </div>
+              </div>
+            </section>
 
-    {/* Quick Links */}
-    <div className="md:col-span-2 space-y-3">
-      <h3 className="text-yellow-400 font-semibold text-lg">Quick Links</h3>
-      <ul className="space-y-2 text-sm">
-        {["Membership", "Publications", "Conferences", "Education"].map((link, idx) => (
-          <li key={idx}>
-            <a href="#" className="hover:text-white text-gray-400 transition-colors duration-200">{link}</a>
-          </li>
-        ))}
-      </ul>
-    </div>
+            <footer className="glass-card bg-black/80 text-white border-t border-white/10 backdrop-blur-sm mt-20">
+              <div className="max-w-7xl mx-auto px-6 py-12">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
+                  <div className="md:col-span-4 space-y-4">
+                    <div className="flex items-center gap-3">
+                      <img
+                        src="/assets/ieee1.png"
+                        alt="IEEE CS Logo"
+                        className="w-10 h-10 object-contain"
+                      />
+                      <h2 className="text-xl font-bold text-yellow-400">IEEE Computer Society</h2>
+                    </div>
+                    <p className="text-sm text-gray-400">
+                      Empowering technologists for the digital future through innovation, collaboration, and excellence.
+                    </p>
+                    <div className="flex space-x-4 pt-2">
+                      <a href="#" className="hover:text-yellow-400 transition-transform hover:scale-110"><Github size={20} /></a>
+                      <a href="#" className="hover:text-yellow-400 transition-transform hover:scale-110"><Twitter size={20} /></a>
+                      <a href="#" className="hover:text-yellow-400 transition-transform hover:scale-110"><Linkedin size={20} /></a>
+                      <a href="#" className="hover:text-yellow-400 transition-transform hover:scale-110"><Mail size={20} /></a>
+                    </div>
+                  </div>
+                  <div className="md:col-span-2">
+                    <h3 className="font-semibold text-yellow-400 mb-4">Quick Links</h3>
+                    <ul className="space-y-2 text-sm">
+                      <li><a href="/about" className="hover:text-yellow-400">About Us</a></li>
+                      <li><a href="/events" className="hover:text-yellow-400">Events</a></li>
+                      <li><a href="/members" className="hover:text-yellow-400">Membership</a></li>
+                      <li><a href="#" className="hover:text-yellow-400">Contact</a></li>
+                    </ul>
+                  </div>
 
-    {/* Resources */}
-    <div className="md:col-span-3 space-y-3">
-      <h3 className="text-yellow-400 font-semibold text-lg">Resources</h3>
-      <ul className="space-y-2 text-sm">
-        {["Digital Library", "Career Center", "Standards", "Research"].map((link, idx) => (
-          <li key={idx}>
-            <a href="#" className="hover:text-white text-gray-400 transition-colors duration-200">{link}</a>
-          </li>
-        ))}
-      </ul>
-    </div>
+                  <div className="md:col-span-2">
+                    <h3 className="font-semibold text-yellow-400 mb-4">Legal</h3>
+                    <ul className="space-y-2 text-sm">
+                      <li><a href="#" className="hover:text-yellow-400">Privacy Policy</a></li>
+                      <li><a href="#" className="hover:text-yellow-400">Terms of Service</a></li>
+                    </ul>
+                  </div>
 
-    {/* Contact Info */}
-    <div className="md:col-span-3 space-y-3">
-      <h3 className="text-yellow-400 font-semibold text-lg">Contact</h3>
-      <ul className="space-y-2 text-sm text-gray-400">
-        <li className="flex items-center gap-2"><span>📞</span> 1-800-XXX-XXXX</li>
-        <li className="flex items-center gap-2"><span>📧</span> info@computer.org</li>
-        <li className="flex items-center gap-2"><span>📍</span> Washington, DC 20001</li>
-      </ul>
-    </div>
-  </div>
-
-  <div className="border-t border-white/10 text-center py-6 text-xs text-white/50">
-    © {new Date().getFullYear()} IEEE Computer Society. All rights reserved.
-  </div>
-</footer>
-
+                  <div className="md:col-span-4">
+                    <h3 className="font-semibold text-yellow-400 mb-4">Contact Us</h3>
+                    <p className="text-sm text-gray-400">GHRCE, Nagpur, India</p>
+                    <p className="text-sm text-gray-400">Email: info@ieeecomputersociety.org</p>
+                  </div>
+                </div>
+              </div>
+              <div className="text-center py-4 border-t border-white/10 text-sm text-gray-500">
+                &copy; {new Date().getFullYear()} IEEE Computer Society. All rights reserved.
+              </div>
+            </footer>
           </div>
         )}
       </AnimatePresence>

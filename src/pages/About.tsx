@@ -87,7 +87,7 @@ const About: React.FC = () => {
         const newImages = [...prevImages];
         const randomIndex = Math.floor(Math.random() * newImages.length);
         const currentUrls = newImages.map(img => img.url);
-const availableImages = projectImages.filter(img => !currentUrls.includes(img.url));
+        const availableImages = projectImages.filter(img => !currentUrls.includes(img.url));
 
         if (availableImages.length > 0) {
           const randomNewImage = availableImages[Math.floor(Math.random() * availableImages.length)];
@@ -102,38 +102,28 @@ const availableImages = projectImages.filter(img => !currentUrls.includes(img.ur
 
   return (
     <div className="pt-16">
-      {/* Dark Overlay */}
-<div className="absolute inset-0 bg-black/55 z-10" />
 
-    {/* Background Image */}
-    <div className="fixed inset-0 z-0">
-      <div
-        className="w-full h-full bg-cover bg-center"
-        style={{
-          backgroundImage: "url('/assets/3.jpg')",
-        }}
-      />
-      
-    </div>
 
       {/* Hero Section */}
       <section className="py-20 px-4 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-7xl mx-auto text-center animate-glow"
-        >
-          <h1 className="page-title animate-glow">Our Journey Through Time</h1>
-          <p className="text-xl text-[#f2f3f4]/80 max-w-3xl mx-auto font-creative">
-            From the dawn of computing to the frontiers of technology, we've been shaping the future of computer science.
-          </p>
-        </motion.div>
+        <div className="glass-card p-8 md:p-12 rounded-3xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="max-w-7xl mx-auto text-center animate-glow"
+            >
+              <h1 className="page-title animate-glow">Our Journey Through Time</h1>
+              <p className="text-xl text-[#f2f3f4]/80 max-w-3xl mx-auto font-creative">
+                From the dawn of computing to the frontiers of technology, we've been shaping the future of computer science.
+              </p>
+            </motion.div>
+        </div>
       </section>
 
       {/* Timeline Section */}
       <section className="py-20 px-4 relative z-10">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto glass-card p-8 md:p-12 rounded-3xl">
           <div className="space-y-12">
             {timeline.map((item, index) => (
               <motion.div
@@ -167,31 +157,31 @@ const availableImages = projectImages.filter(img => !currentUrls.includes(img.ur
 
       {/* Projects Gallery Section */}
       <section className="py-20 px-4 relative z-10">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-5xl font-bold text-center mb-12 animate-glow font-dainty">
-          Our Moments
-        </h2>
-        <div className="grid grid-cols-5 gap-4">
-          {currentImages.map((item, index) => (
-            <motion.div
-              key={`${item.title}-${index}`}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="relative aspect-square glass-card rounded-lg overflow-hidden group"
-            >
-              <img
-                src={item.url}
-                alt={item.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#191919] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                <h3 className="text-[#f2f3f4] font-dainty font-semibold text-sm">{item.title}</h3>
-              </div>
-            </motion.div>
-          ))}
+        <div className="max-w-7xl mx-auto glass-card p-8 md:p-12 rounded-3xl">
+            <h2 className="text-5xl font-bold text-center mb-12 animate-glow font-dainty">
+              Our Moments
+            </h2>
+            <div className="grid grid-cols-5 gap-4">
+              {currentImages.map((item, index) => (
+                <motion.div
+                  key={`${item.title}-${index}`}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5 }}
+                  className="relative aspect-square glass-card rounded-lg overflow-hidden group"
+                >
+                  <img
+                    src={item.url}
+                    alt={item.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#191919] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <h3 className="text-[#f2f3f4] font-dainty font-semibold text-sm">{item.title}</h3>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
         </div>
-      </div>
     </section>
     </div>
   );

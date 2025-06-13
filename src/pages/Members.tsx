@@ -109,22 +109,10 @@ const Members: React.FC = () => {
 
   return (
     <div className="pt-16">
-    {/* Background Image */}
-    <div className="fixed inset-0 z-0">
-      <div
-        className="w-full h-full bg-cover bg-center"
-        style={{
-          backgroundImage: "url('/assets/2.jpg')"
-          ,
-        }}
-      />
-      <div className="absolute inset-0 bg-black/40"/>
-    </div>
-  {/* Dark Overlay */}
 
 
       <section className="py-20 px-4 relative z-10">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto bg-black/80 p-10 rounded-lg">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -150,7 +138,7 @@ const Members: React.FC = () => {
               >
                 <div className="relative transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] h-[360px]">
                   {/* Front of card */}
-                  <div className="absolute inset-0 bg-deep-space/80 backdrop-blur-sm overflow-hidden transform skew-x-2 hover:skew-x-0 transition-transform duration-300" 
+                  <div className="absolute inset-0 bg-deep-space/80 backdrop-blur-sm overflow-hidden transform skew-x-2 hover:skew-x-0 transition-transform duration-300 [backface-visibility:hidden]" 
                        style={{
                          clipPath: 'polygon(0 0, 100% 0, 95% 100%, 5% 100%)',
                        }}>
@@ -188,7 +176,7 @@ const Members: React.FC = () => {
                   </div>
 
                   {/* Back of card */}
-                  <div className="absolute inset-0 bg-deep-space/80 backdrop-blur-sm overflow-hidden [transform:rotateY(180deg)] [backface-visibility:hidden] transform skew-x-2"
+                  <div className="absolute inset-0 bg-deep-space/80 backdrop-blur-sm overflow-hidden [backface-visibility:hidden] [transform:rotateY(180deg)]"
                        style={{
                          clipPath: 'polygon(0 0, 100% 0, 95% 100%, 5% 100%)',
                        }}>
@@ -211,14 +199,11 @@ const Members: React.FC = () => {
                       <div className="flex-grow">
                         <div className="flex items-center mb-2">
                           <Award size={12} className="text-neon-yellow mr-1.5" />
-                          <span className="text-white text-xs font-semibold">Achievements</span>
+                          <h4 className="text-xs font-semibold text-white">Achievements</h4>
                         </div>
-                        <ul className="text-xs text-white/70 space-y-1">
-                          {member.achievements.map((achievement, i) => (
-                            <li key={i} className="flex items-start">
-                              <span className="mr-1">•</span>
-                              <span className="line-clamp-1">{achievement}</span>
-                            </li>
+                        <ul className="space-y-1 text-xs text-white/70 list-disc list-inside">
+                          {member.achievements.map((ach, i) => (
+                            <li key={i}>{ach}</li>
                           ))}
                         </ul>
                       </div>

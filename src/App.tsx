@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Members from './pages/Members';
 import Events from './pages/Events';
+import Cygnus from './pages/Cygnus';
 
 function App() {
   return (
@@ -19,12 +20,8 @@ function App() {
             playsInline
             className="w-full h-full object-cover"
           >
-            <source src="/assets/mars.mp4" type="video/mp4" />
+            <source src="/assets/star-wars.mp4" type="video/mp4" />
           </video>
-          <div
-  className="absolute inset-0 bg-black/40"
-/>
-
         </div>
 
         {/* Content */}
@@ -35,6 +32,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/members" element={<Members />} />
             <Route path="/events" element={<Events />} />
+            <Route path="/cygnus" element={<Cygnus />} />
           </Routes>
         </div>
       </div>
